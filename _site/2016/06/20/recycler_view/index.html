@@ -7,16 +7,16 @@
     <link href="http://gmpg.org/xfn/11" rel="profile">
 
     <!-- Meta tags -->
-    <title>Bootstrap</title>
-    <meta name="description" content="bootstrap" />
+    <title>Recycler View</title>
+    <meta name="description" content="Recycler View" />
     <meta name="keywords" content="" />
 
     <!-- Open graph -->
-    <meta property="og:title" content="Bootstrap"/>
+    <meta property="og:title" content="Recycler View"/>
     <meta property="og:type" content="blog"/>
     <meta property="og:site_name" content="Changer.nl"/>
-    <meta property="og:description" content="bootstrap" />
-    <meta property="og:url" content="http://changer.nl/devlog/2016/06/13/bootstrap/" />
+    <meta property="og:description" content="Recycler View" />
+    <meta property="og:url" content="http://changer.nl/devlog/2016/06/20/recycler_view/" />
     <meta property="og:image" content="http://changer.nl/devlog/public/logo.png" />
 
     <!-- CSS -->
@@ -148,42 +148,64 @@ function showhide()
 
 <div class="post">
 <br>
-<h1 id="title" class="title" style="margin-top:-2%">Bootstrap</h1>
+<h1 id="title" class="title" style="margin-top:-2%">Recycler View</h1>
 
  
 
   <!-- div class="post-container">                
         <div class="post-thumb"> -->
           
-             <img id="img2" style="" src="/blogs/assets/bt_image.jpg" />
+             <img id="img2" style="" src="/blogs/assets/recycler.jpg" />
           
         <!-- </div> 
         <div class="post-content"> -->
-            <h3 id="con">Bootstrap
+            <h3 id="con">As I am working on Collage of an images, so need to be comfortable with
 
-Even in present day scenario, we have seen that most of the companies, organizations, enterprises and many startups use the key concept called “website” for marketing, advertising thier products and projects. Eventhough, it looks like an old concept, it has its own beauty and value that appeals to almost all the users. By using frameworks like Bootstrap we can construct some of the most awesome websites. The websites which are designed using Bootstrap gives quality touch which helps in building an instant relationship between the people and the company. 
- 
-Bootstrap is the most popular front-end framework by twitter for developing responsive, mobile-first web sites. It is useful for faster and easier responsive Web development. 
-It comprises 3 main techniques or tools like: 
-HTML,CSS,Javascript. 
+-RecyclerView
 
-What is Responsive Web design? 
-Responsive web design is all about creating web sites which automatically adjust themselves to look good on all devices, from small phones to large desktops. 
+-GridLayoutManager
 
-Why Use Bootstrap? 
-Easy to use: Anybody with basic knowledge of HTML and CSS can start using Bootstrap. 
-Responsive features: Bootstrap's responsive CSS adjusts to phones, tablets, and desktops. 
-Mobile-first approach: In Bootstrap 3, mobile-first styles are part of the core framework. 
+**RecyclerView: What it is?**
+
+The RecyclerView has been developed with extensibility in mind. It is new ViewGroup that is prepared to render any adapter-based view in an similar way. It is supossed to be the successor of ListView and GridView, and it can be found in the latest support-v7 version, and to know more https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html.
+
+**GridLayoutManager:**
+
+GridLayoutManager will decide which part of screen the views are to be placed. It must be able to manage scrolling and recycling and to manage the views in different orders then we can use SpanSizeLookup which manages according to the spaces as shown in below code snippet:
+
+
+````````
+GridLayoutManager mLayoutManager = new GridLayoutManager(this, 3);
+mRecyclerView.setLayoutManager(mLayoutManager);
+
+mLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+    @Override
+    public int getSpanSize(int position) {
+	if (position == 0 || position == 6) {
+                return 3; // ITEMS AT POSITION 1 AND 6 OCCUPY 2 SPACES
+            } else {
+                return 1; // OTHER ITEMS OCCUPY ONLY A SINGLE SPACE
+            }
+        }
+    });
+
+````````
+
+you can change count of spaces on each position according to your needs. To know more https://developer.android.com/reference/android/support/v7/widget/GridLayoutManager.html
+
+If any issues, you can check my github repository at https://github.com/Shradha953/RecyclerView
+
+
 </h3>
         <!-- </div>
       </div> -->
 
   <div>
             
-              <img style="width:10%;height:10%" src="/blogs/assets/Nagaraj.jpg"></img>
+              <img style="width:10%;height:10%" src="/blogs/assets/Shradha.jpg"></img>
             
             <span class="right date">
-            13 Jun 2016 by <a href="http://github.com/Nagarajsk">@Nagarajsk</a>
+            20 Jun 2016 by <a href="http://github.com/Shradha953">@Shradha953</a>
             </span>
       </div>
 
@@ -201,9 +223,9 @@ Mobile-first approach: In Bootstrap 3, mobile-first styles are part of the core 
     
       <li><span class="date">20 Jun 2016</span> &nbsp;&raquo;&nbsp; <a title="Shared Preferences" href="/blogs/2016/06/20/shared_preferences/">Shared Preferences</a></li>
     
-      <li><span class="date">20 Jun 2016</span> &nbsp;&raquo;&nbsp; <a title="Recycler View" href="/blogs/2016/06/20/recycler_view/">Recycler View</a></li>
-    
       <li><span class="date">20 Jun 2016</span> &nbsp;&raquo;&nbsp; <a title="ILImageEditor tutorial" href="/blogs/2016/06/20/ILImageEditor_tutorials/">ILImageEditor tutorial</a></li>
+    
+      <li><span class="date">13 Jun 2016</span> &nbsp;&raquo;&nbsp; <a title="Bootstrap" href="/blogs/2016/06/13/bootstrap/">Bootstrap</a></li>
     
       <li><span class="date">31 May 2016</span> &nbsp;&raquo;&nbsp; <a title="Social Login" href="/blogs/2016/05/31/social_login/">Social Login</a></li>
     
